@@ -13,21 +13,43 @@ Assignments:
 ##### x03. Determine if the quadratic can be factored
 '''
 import x01_discriminant
+import math
 
-def factorable(a,b = "a",c = "a"):
+def factorable(a, b = "a",c = "a"):
   if b == "a" and c == "a":
     if a >= 0:
-      return True
-    if a <= 0:
-      return False
+      r = math.sqrt(a)
+      if r == round(r):
+        return True
+      else:
+        return False
+    else:
+      a = (-2*a) + a
+      r = math.sqrt(a)
+      if r == round(r):
+        return True
+      else:
+        return False 
   else:
+    b = int(b)
+    a = int(a)
+    c = int(c)
     D = b**2 - (4*a*c)
     if D >= 0:
-      return True
-    if D < 0:
-      return False
-  
-  return None
+      r = math.sqrt(D)
+      if r == round(r):
+        return True
+      else:
+        return False
+    else:
+      D = (-2*D) + D
+      r = math.sqrt(D)
+      if r == round(r):
+        return True
+      else: 
+        return False
+       
+      
 
 def main():
   #uncomment the lines that match your assignment
